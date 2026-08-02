@@ -93,7 +93,7 @@ const enStepTexts: { [key in keyTypes]: { [key: string]: [string, string] } } = 
     ],
   },
   analysis: {
-    wilcome: [
+    welcome: [
       "Analysis Tutorial",
       "Now we want to find the Higgs boson. For this an automated event selection is used. Again we load an example event first.",
     ],
@@ -531,8 +531,8 @@ const availableTutorials = {
     return [
       {
         popover: {
-          title: langMap["wilcome"][0],
-          description: langMap["wilcome"][1],
+          title: langMap["welcome"][0],
+          description: langMap["welcome"][1],
           onNextClick: (_el, _step, opts: { driver: Driver }) => {
             selectFile("./data/Hto4l_120-130GeV.ig")
               .then(() => {
