@@ -52,7 +52,10 @@
     "py": "# Using Python HTTP server",
     "node": "# Using Node.js http-server",
     "node-install": "# Install the http-server package (only required once)",
-    "node-run": "# Start the http-server"
+    "node-run": "# Start the http-server",
+    "plotting": "Visualising the Results",
+    "plotting1": "After collecting the analysis results of the students (via a local cloud solution, a USB stick, etc.) a python script is provided for plotting the mass distribution of the categorised events. The script can be found on <a href=\"https://github.com/uhh-cms-tutorials/masterclasses/tree/stable/scripts\" target=\"_blank\">Scripts @ GitHub/Masterclasses</a>",
+    "plotting2": "For running the script, a working python installation is needed. For instructions on using the script please refer to the included README file"
   },
   "dev": {
     "title": "Developer Guide",

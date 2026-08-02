@@ -51,7 +51,10 @@
     "py": "# Verwenden von Python HTTP-Server",
     "node": "# Verwenden von Node.js http-server",
     "node-install": "# Installieren des http-servers packets (nur einmalig erforderlich)",
-    "node-run": "# Starten des http-servers"
+    "node-run": "# Starten des http-servers",
+    "plotting": "Visualisierung der Ergebnisse",
+    "plotting1": "Nach dem Sammeln der Analyseergebnisse der Schüler (über eine lokale Cloud-Lösung, einen USB-Stick usw.) wird ein Python-Skript bereitgestellt, um die Massverteilung der kategorisierten Ereignisse zu plotten. Das Skript ist verfügbar unter <a href=\"https://github.com/uhh-cms-tutorials/masterclasses/tree/stable/scripts\" target=\"_blank\">Skripte @ GitHub/Masterclasses</a>",
+    "plotting2": "Zum Ausführen des Skripts wird eine funktionierende Python-Installation benötigt. Anweisungen zur Nutzung des Skripts finden Sie in der beigefügten README-Datei"
   },
   "dev": {
     "title": "Entwicklerhandbuch",
