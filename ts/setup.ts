@@ -499,7 +499,7 @@ function initControlPanel() {
  * Creates a checkbox container for a given GUI controller.
  * @param cont The GUI controller to create the checkbox container for.
  */
-function createCheckboxContainer(cont: Controller) {
+function createCheckboxContainer(cont: Controller, is_active: boolean = false) {
   const selectionField = cont as unknown as SelectionFieldController;
 
   // Create a checkbox element
@@ -507,7 +507,8 @@ function createCheckboxContainer(cont: Controller) {
   checkbox.type = "checkbox";
   checkbox.classList.add("sel-checkbox");
   checkbox.name = `enable-${selectionField.property}`;
-  selectionField.checkbox = false;
+  checkbox.checked = is_active;
+  selectionField.checkbox = is_active;
 
   // Add the checkbox to the DOM
   selectionField.domElement.insertBefore(checkbox, selectionField.$name);
@@ -515,8 +516,8 @@ function createCheckboxContainer(cont: Controller) {
   // get input field and disable the input field initially
   const inputField = selectionField.$input;
   inputField.classList.add("sel-field");
-  inputField.disabled = true;
-  inputField.value = "";
+  inputField.disabled = !is_active;
+  inputField.value = is_active ? selectionField.initialValue : "";
 
   checkbox.addEventListener("change", function () {
     inputField.disabled = !this.checked;
@@ -621,8 +622,11 @@ function initSelectionFields() {
     cont.onFinishChange(function (this: SelectionFieldController, value: number) {
       if (value < 0) this.setValue(0);
     });
-    if (["selMuons", "selElectrons", "selPhotons", "maxMETs"].includes(key)) {
-      createCheckboxContainer(cont);
+    if (["selMuons", "selElectrons"].includes(key)) {
+      createCheckboxContainer(cont, true);
+    }
+    if (["selPhotons", "maxMETs"].includes(key)) {
+      createCheckboxContainer(cont, false);
     }
     if (key === "minptvis") {
       cont.onFinishChange(function (this: SelectionFieldController, value: number) {
