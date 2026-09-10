@@ -622,10 +622,7 @@ function initSelectionFields() {
     cont.onFinishChange(function (this: SelectionFieldController, value: number) {
       if (value < 0) this.setValue(0);
     });
-    if (["selMuons", "selElectrons"].includes(key)) {
-      createCheckboxContainer(cont, true);
-    }
-    if (["selPhotons", "maxMETs"].includes(key)) {
+    if (["selMuons", "selElectrons", "selPhotons", "maxMETs"].includes(key)) {
       createCheckboxContainer(cont, false);
     }
     if (key === "minptvis") {
